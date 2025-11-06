@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="WordWhiz Help and Support" />
+    <meta name="author" content="WordWhiz Team" />
+    <title>Help & Support | WordWhiz</title>
+    <link rel="icon" type="image/x-icon" href="assets/img/wordwhiz_logo.png" />
+    <!-- Bootstrap icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,600;1,600&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Mulish:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap" rel="stylesheet" />
+    <!-- Core theme CSS -->
+    <link href="css/styles.css" rel="stylesheet" />
+    <style>
+      /* Import custom font */
+      @font-face {
+        font-family: 'WordWhizFont';
+        src: url('font/pixel.ttf') format('truetype');
+      }
+
+      /* Default font for body text */
+      body, p, a, li, span, button {
+        font-family: 'Mulish', sans-serif !important;
+      }
+
+      /* Apply custom font to all headers */
+      h1, h2, h3, h4, h5, h6 {
+        font-family: 'WordWhizFont', 'Kanit', sans-serif !important;
+      }
+
+      /* Help Page Custom Styling */
+      .help-header {
+        background: linear-gradient(135deg, #ffc107, #ffcc33);
+        color: #000;
+        padding: 120px 0 80px;
+        text-align: center;
+      }
+
+      .help-header h1 {
+        font-size: 3rem;
+        font-weight: 700;
+      }
+
+      .help-header p {
+        font-size: 1.2rem;
+        color: #212529;
+      }
+
+      .accordion-button {
+        font-weight: 600;
+        color: #212529;
+      }
+
+      .accordion-button:not(.collapsed) {
+        background-color: #fff3cd;
+        color: #000;
+      }
+
+      .accordion-item {
+        border: 1px solid #f0f0f0;
+        border-radius: 10px;
+        margin-bottom: 1rem;
+      }
+
+      .btn-warning:hover {
+        background-color: #e0a800;
+        color: #fff;
+      }
+
+      footer {
+        margin-top: 80px;
+      }
+    </style>
+  </head>
+
+  <body id="page-top">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm wordwhiz-navbar" id="mainNav">
+      <div class="container px-5">
+        <a class="navbar-brand wordwhiz-brand" href="home.html">WORDWHIZ</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarResponsive"
+          aria-controls="navbarResponsive"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          Menu
+          <i class="bi-list"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ms-auto me-4 my-3 my-lg-0">
+            <li class="nav-item"><a class="nav-link me-lg-3" href="home.html#features">Features</a></li>
+            <li class="nav-item"><a class="nav-link me-lg-3" href="home.html#download">Download</a></li>
+            <li class="nav-item"><a class="nav-link me-lg-3 active" href="help.html">Help</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Help Header -->
+    <header class="help-header">
+      <div class="container px-5">
+        <h1>Help & Support</h1>
+        <p class="mt-3">Find answers to common questions or get in touch with our team for assistance.</p>
+      </div>
+    </header>
+
+    <!-- FAQ Section -->
+    <section id="help" class="py-5 bg-light">
+      <div class="container px-5">
+        <div class="text-center mb-5">
+          <h2 class="display-6 fw-bold text-dark mb-3">Frequently Asked Questions</h2>
+          <p class="text-muted lead">Here are some of the most common questions about WordWhiz.</p>
+        </div>
+
+        <!-- Accordion -->
+        <div class="accordion shadow-sm" id="helpAccordion">
+          <!-- FAQ 1 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingOne">
+              <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseOne"
+                aria-expanded="true"
+                aria-controls="collapseOne"
+              >
+                How do I install the WordWhiz app?
+              </button>
+            </h2>
+            <div
+              id="collapseOne"
+              class="accordion-collapse collapse show"
+              aria-labelledby="headingOne"
+              data-bs-parent="#helpAccordion"
+            >
+              <div class="accordion-body">
+                Click the <strong>“Download Now”</strong> button on the homepage to get the <code>WordWhiz.apk</code> file. Then, open it on your Android device and follow the installation steps.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 2 -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingTwo">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo"
+                aria-expanded="false"
+                aria-controls="collapseTwo"
+              >
+                The app won’t install. What should I do?
+              </button>
+            </h2>
+            <div
+              id="collapseTwo"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingTwo"
+              data-bs-parent="#helpAccordion"
+            >
+              <div class="accordion-body">
+                Make sure <strong>“Install from unknown sources”</strong> is enabled in your phone’s settings. Also, verify you have enough storage space and a stable internet connection before re-downloading.
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 3: Teacher's Manual -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingThree">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseThree"
+                aria-expanded="false"
+                aria-controls="collapseThree"
+              >
+                Teacher’s Manual
+              </button>
+            </h2>
+            <div
+              id="collapseThree"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingThree"
+              data-bs-parent="#helpAccordion"
+            >
+              <div class="accordion-body">
+                The <strong>Teacher’s Manual</strong> provides detailed steps on how educators can integrate WordWhiz into classroom activities.  
+                <ul>
+                  <li>Guide students on downloading and setting up the app.</li>
+                  <li>Monitor progress through classroom engagement activities.</li>
+                  <li>Use in-class challenges to reinforce English grammar and vocabulary lessons.</li>
+                  <li>Encourage group-based learning using WordWhiz’s multiplayer modes.</li>
+                </ul>
+                For a full teacher’s guide, navigate the manual:
+                <br />
+                <a href="manual.html" target="_blank" class="text-warning fw-bold">
+                  <i class="bi bi-file-earmark-text me-2"></i>Teacher’s Manual
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 4: Student's Manual -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFour">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseFour"
+                aria-expanded="false"
+                aria-controls="collapseFour"
+              >
+                Student’s Manual
+              </button>
+            </h2>
+            <div
+              id="collapseFour"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingFour"
+              data-bs-parent="#helpAccordion"
+            >
+              <div class="accordion-body">
+                The <strong>Student’s Manual</strong> includes instructions and tips to maximize learning with WordWhiz:  
+                <ul>
+                  <li>Learn how to play language-based mini-games effectively.</li>
+                  <li>Track your progress and earn achievements.</li>
+                  <li>Participate in class leaderboards and vocabulary challenges.</li>
+                  <li>Improve pronunciation and listening skills with interactive voice exercises.</li>
+                </ul>
+                You can navigate the Student’s Manual below:
+                <br />
+                <a href="manual.html" target="_blank" class="text-warning fw-bold">
+                  <i class="bi bi-file-earmark-text me-2"></i>Student’s Manual
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ 5: Contact -->
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFive">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseFive"
+                aria-expanded="false"
+                aria-controls="collapseFive"
+              >
+                How do I contact support?
+              </button>
+            </h2>
+            <div
+              id="collapseFive"
+              class="accordion-collapse collapse"
+              aria-labelledby="headingFive"
+              data-bs-parent="#helpAccordion"
+            >
+              <div class="accordion-body">
+                You can contact us at
+                <a href="mailto:wordwhiz.socials@gmail.com" class="text-warning fw-bold"
+                  >wordwhiz.socials@gmail.com</a
+                >. Our team typically responds within 1–2 business days.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact Box -->
+        <div class="text-center mt-5">
+          <h5 class="fw-bold mb-3">Still need help?</h5>
+          <p class="text-muted mb-4">We’re happy to assist you with anything related to WordWhiz.</p>
+          <a
+            href="mailto:wordwhiz.socials@gmail.com"
+            class="btn btn-warning px-5 py-2 rounded-pill fw-bold shadow-sm"
+          >
+            <i class="bi bi-envelope-fill me-2"></i>Contact Support
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-black text-center py-5">
+      <div class="container px-5">
+        <div class="text-white-50 small">
+          <div class="mb-2">&copy; WordWhiz 2025. All Rights Reserved.</div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap core JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
+</html>
