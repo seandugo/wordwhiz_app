@@ -283,28 +283,32 @@
     window.addEventListener("DOMContentLoaded", () => {
       const params = new URLSearchParams(window.location.search);
       const section = params.get("section");
-
+  
       if (section && content[section]) {
-        // Open correct accordion (teacher or student)
+        // Determine if section belongs to Teacher or Student
         const isTeacher = section.startsWith("teacher");
         const accordionId = isTeacher ? "#collapseTeacher" : "#collapseStudent";
         const accordion = document.querySelector(accordionId);
-
-        // Expand accordion
+  
+        // Expand the right accordion section
         const bsCollapse = new bootstrap.Collapse(accordion, { show: true });
-
-        // Highlight link
+  
+        // Highlight the correct nav link
         const activeLink = document.querySelector(`.nav-link[data-section="${section}"]`);
         document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
         if (activeLink) {
           activeLink.classList.add('active');
         }
-
-        // Load the section content
+  
+        // Load the right manual content
         document.getElementById("manualContent").innerHTML = content[section];
+  
+        // Optional: Smooth scroll to the content area
+        document.getElementById("manualContent").scrollIntoView({ behavior: "smooth" });
       }
     });
   </script>
 </body>
 
 </html>
+
