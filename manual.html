@@ -107,6 +107,18 @@
       text-align: center;
       padding: 20px 0;
     }
+
+    #manualContent img {
+      display: block;
+      margin: 20px auto;
+      /* centers horizontally */
+      max-width: 100%;
+      /* responsive scaling */
+      height: auto;
+      /* maintain aspect ratio */
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    }
   </style>
 </head>
 
@@ -180,6 +192,7 @@
                 <li><a href="#" class="nav-link" data-section="student-games">Using Mini-Games</a></li>
                 <li><a href="#" class="nav-link" data-section="student-tips">Learning Tips</a></li>
                 <li><a href="#" class="nav-link" data-section="student-achievements">Achievements</a></li>
+                <li><a href="#" class="nav-link" data-section="student-change-code">Change Class</a></li>
               </ul>
             </div>
           </div>
@@ -219,22 +232,36 @@
           <p>Follow these steps to get started:</p>
           <ol>
             <li>Ensure all students have downloaded the WordWhiz app.</li>
-            <li>Create a class and fill up details.</li>
+            <li>Navigate to 'Classes' and add class. <strong>Note:</strong> You can have atleast 30 classes.</li>
+            <img src="assets/img/class-setup1.jpg" alt="Class Setup 1">
+            <img src="assets/img/class-setup2.jpg" alt="Class Setup 2">
+            <li>Fill up class details and create class</li>
+            <img src="assets/img/class-setup3.jpg" alt="Class Setup 3">
             <li>Share the class code with your students created in your class</li>
-            <li>You can have atleast 30 classes.</li>
-            <li>Use the dashboard to view performance analytics.</li>
+            <img src="assets/img/class-setup4.jpg" alt="Class Setup 4">
+            <li>Use the 'Overview' tab to view class analytics.</li>
+            <img src="assets/img/class-setup5.jpg" alt="Class Setup 5">
           </ol>
         `,
       'teacher-activities': `
           <h2>Classroom Activities</h2>
           <p>Encourage active learning using WordWhiz’s gamified lesson: the Spelling Game Challenge</p>
+          <img src="assets/img/class-act1.jpg" alt="Class Activities 1">
+          <img src="assets/img/class-act2.jpg" alt="Class Activities 2">
         `,
       'teacher-monitor': `
           <h2>Monitoring Progress</h2>
-          <p>Teachers can track individual and group progress in real-time:</p>
+          <p>Teachers can track individual progress in real-time:</p>
           <ul>
-            <li>Check progress reports via the teacher dashboard.</li>
+            <li>Check individual progress reports via their profile in Classes.</li>
+            <img src="assets/img/class-monitor1.jpg" alt="Class Monitor 1">
+            <img src="assets/img/class-monitor2.jpg" alt="Class Monitor 2">
+            <img src="assets/img/class-monitor3.jpg" alt="Class Monitor 3">
             <li>You can also see the students personal progress and achievements.</li>
+            <img src="assets/img/class-monitor4.jpg" alt="Class Monitor 4">
+            <img src="assets/img/class-act1.jpg" alt="Class Monitor 5">
+            <img src="assets/img/class-monitor5.jpg" alt="Class Monitor 6">
+            <img src="assets/img/class-monitor6.jpg" alt="Class Monitor 7">
           </ul>
         `,
       'student-intro': `
@@ -243,20 +270,28 @@
           <ul>
             <li>Install the app from the homepage.</li>
             <li>Sign up and create your profile.</li>
+            <li>Join your teacher's class code.</li>
+            <img src="assets/img/class-setup4.jpg" alt="Class Setup 4">
             <li>Start playing!</li>
           </ul>
         `,
       'student-games': `
           <h2>Using Mini-Games</h2>
           <p>WordWhiz offers unique mini-games to boost your English Vocabulary: The Spelling Game Challenge</p>
+          <img src="assets/img/class-act1.jpg" alt="Class Activities 1">
+          <img src="assets/img/class-act2.jpg" alt="Class Activities 2">
         `,
       'student-tips': `
           <h2>Learning Tips</h2>
           <p>Make the most out of WordWhiz:</p>
           <ul>
             <li>Play a little each day for consistent learning.</li>
-            <li>Use the “Review” section to revisit missed questions.</li>
-            <li>Compete with classmates to stay motivated!</li>
+            <li>Use the “Review” section to spark your minds before taking lectures.</li>
+            <img src="assets/img/student-review.jpg" alt="Learning Tips 1">
+            <img src="assets/img/student-review1.jpg" alt="Learning Tips 2">
+            <img src="assets/img/student-review2.jpg" alt="Learning Tips 3">
+            <li>Complete the quiz and stay motivated!</li>
+            <img src="assets/img/student-review3.jpg" alt="Learning Tips 4">
           </ul>
         `,
       'student-achievements': `
@@ -264,7 +299,24 @@
           <p>Earn rewards and level up your learning experience!</p>
           <ul>
             <li>Unlock badges for completing challenges.</li>
+            <img src="assets/img/class-act1.jpg" alt="Class Monitor 5">
             <li>Track your stats and see how you improve over time.</li>
+            <img src="assets/img/class-monitor4.jpg" alt="Class Monitor 4">
+            <img src="assets/img/class-monitor5.jpg" alt="Class Monitor 6">
+            <img src="assets/img/class-monitor6.jpg" alt="Class Monitor 7">
+          </ul>
+        `,
+        'student-change-code': `
+          <h2>Change Class</h2>
+          <p>to change class code, just navigate to Profile - Profile Settings!</p>
+          <ul>
+            <li>Go to Profile.</li>
+            <img src="assets/img/class-change1.jpg" alt="Class Monitor 5">
+            <li>Open Profile Settings.</li>
+            <img src="assets/img/class-change2.jpg" alt="Class Monitor 4">
+            <li>Tap Change Class.</li>
+            <img src="assets/img/class-change3.jpg" alt="Class Monitor 4">
+            <li>Fill up another Class Code and wait for the approval of your teacher.</li>
           </ul>
         `,
     };
@@ -283,32 +335,28 @@
     window.addEventListener("DOMContentLoaded", () => {
       const params = new URLSearchParams(window.location.search);
       const section = params.get("section");
-  
+
       if (section && content[section]) {
-        // Determine if section belongs to Teacher or Student
+        // Open correct accordion (teacher or student)
         const isTeacher = section.startsWith("teacher");
         const accordionId = isTeacher ? "#collapseTeacher" : "#collapseStudent";
         const accordion = document.querySelector(accordionId);
-  
-        // Expand the right accordion section
+
+        // Expand accordion
         const bsCollapse = new bootstrap.Collapse(accordion, { show: true });
-  
-        // Highlight the correct nav link
+
+        // Highlight link
         const activeLink = document.querySelector(`.nav-link[data-section="${section}"]`);
         document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
         if (activeLink) {
           activeLink.classList.add('active');
         }
-  
-        // Load the right manual content
+
+        // Load the section content
         document.getElementById("manualContent").innerHTML = content[section];
-  
-        // Optional: Smooth scroll to the content area
-        document.getElementById("manualContent").scrollIntoView({ behavior: "smooth" });
       }
     });
   </script>
 </body>
 
 </html>
-
